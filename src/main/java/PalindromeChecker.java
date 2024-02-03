@@ -35,15 +35,24 @@ public void tester()
     }
   }
 }
-public boolean palindrome(String word)
-{
-  //your code here
-  return false;
+public boolean palindrome(String word) {
+String onlyCharacters = new String();
+  for (int i=0;i<word.length();i++) {
+    if (!word.substring(i,i+1).equals(" ")) {
+      if (Character.isLetter(word.charAt(i))) {
+        onlyCharacters=onlyCharacters+word.substring(i,i+1);
+      }
+    }
+ }
+String newWord=onlyCharacters.toLowerCase();
+return reverse(newWord).equals(newWord);
 }
 public String reverse(String str)
 {
     String sNew = new String();
-    //your code here
+    for(int i=str.length()-1;i>=0;i--){
+      sNew=sNew+str.substring(i,i+1);
+    }
     return sNew;
 }
 }
